@@ -7,13 +7,13 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday Husband ❤️</title>
+<title>Happy Birthday, Ancient Husband 💗</title>
 
 <style>
 
-/* =========================
-   GENERAL
-========================= */
+/* =========================================
+   BASIC SETUP
+========================================= */
 
 * {
     box-sizing: border-box;
@@ -37,36 +37,49 @@ body {
     background:
         linear-gradient(
             135deg,
-            #ffd6e7,
-            #fff0f6,
-            #ffc2dc
+            #ffd1e4,
+            #fff0f7,
+            #ffc0dc,
+            #ffe4ef
         );
 
     color: #5c2441;
 
     text-align: center;
 
-    overflow-x: hidden;
+    overflow: hidden;
 
 }
 
 
-/* =========================
-   MAIN CONTAINER
-========================= */
+/* =========================================
+   MAIN
+========================================= */
 
 .container {
 
-    max-width: 750px;
+    width: 100%;
 
-    margin: auto;
+    min-height: 100vh;
 
-    padding: 45px 20px;
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
 
 }
 
 
 .card {
+
+    width: 100%;
+
+    max-width: 720px;
+
+    min-height: 500px;
 
     background:
         rgba(255,255,255,0.94);
@@ -75,50 +88,135 @@ body {
         3px solid #ff9fc5;
 
     border-radius:
-        30px;
+        32px;
 
     padding:
         40px 25px;
 
     box-shadow:
-        0 15px 40px
-        rgba(170,60,110,0.18);
+        0 20px 60px
+        rgba(170,60,110,0.22);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
 
 }
 
 
-/* =========================
-   HEART
-========================= */
+/* =========================================
+   PAGES
+========================================= */
 
-.heart {
+.page {
 
-    font-size: 60px;
+    width: 100%;
 
     animation:
-        heartbeat 1.1s infinite alternate;
+        pageEnter 0.7s ease forwards;
 
 }
 
 
-@keyframes heartbeat {
+.page.exit {
+
+    animation:
+        pageExit 0.45s ease forwards;
+
+}
+
+
+@keyframes pageEnter {
 
     from {
-        transform: scale(1);
+
+        opacity: 0;
+
+        transform:
+            translateX(70px)
+            scale(0.95);
+
     }
 
     to {
-        transform: scale(1.18);
+
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            scale(1);
+
     }
 
 }
 
 
-/* =========================
-   HEADINGS
-========================= */
+@keyframes pageExit {
 
-h1 {
+    from {
+
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            scale(1);
+
+    }
+
+    to {
+
+        opacity: 0;
+
+        transform:
+            translateX(-70px)
+            scale(0.95);
+
+    }
+
+}
+
+
+/* =========================================
+   TEXT ANIMATIONS
+========================================= */
+
+.animate-text {
+
+    animation:
+        textPop 0.9s ease forwards;
+
+}
+
+
+@keyframes textPop {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+.bigTitle {
 
     font-size:
         clamp(38px, 9vw, 70px);
@@ -129,20 +227,90 @@ h1 {
     margin:
         15px 0;
 
+    animation:
+        titleBounce 1s ease;
+
 }
 
+
+@keyframes titleBounce {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(0.5);
+
+    }
+
+    70% {
+
+        transform:
+            scale(1.1);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================
+   HEART
+========================================= */
+
+.heart {
+
+    font-size:
+        65px;
+
+    animation:
+        heartbeat 1s infinite alternate;
+
+}
+
+
+@keyframes heartbeat {
+
+    from {
+
+        transform:
+            scale(1);
+
+    }
+
+    to {
+
+        transform:
+            scale(1.18);
+
+    }
+
+}
+
+
+/* =========================================
+   HEADINGS
+========================================= */
 
 h2 {
 
     color:
         #df4d89;
 
+    font-size:
+        30px;
+
 }
 
-
-/* =========================
-   TEXT
-========================= */
 
 p {
 
@@ -150,14 +318,14 @@ p {
         18px;
 
     line-height:
-        1.6;
+        1.7;
 
 }
 
 
-/* =========================
+/* =========================================
    BUTTONS
-========================= */
+========================================= */
 
 button {
 
@@ -168,10 +336,10 @@ button {
         50px;
 
     padding:
-        15px 25px;
+        15px 27px;
 
     margin:
-        8px;
+        10px 5px;
 
     font-size:
         16px;
@@ -182,14 +350,18 @@ button {
     cursor:
         pointer;
 
-    transition:
-        0.2s;
-
     background:
         #ed5795;
 
     color:
         white;
+
+    box-shadow:
+        0 7px 18px
+        rgba(220,70,130,0.25);
+
+    transition:
+        transform 0.2s ease;
 
 }
 
@@ -213,86 +385,119 @@ button:hover {
 }
 
 
-/* =========================
-   HIDDEN
-========================= */
-
-.hidden {
-
-    display:
-        none;
-
-}
-
-
-/* =========================
-   SECTIONS
-========================= */
-
-.section {
+.next {
 
     margin-top:
-        30px;
-
-    padding:
-        28px;
+        25px;
 
     background:
-        #fff0f6;
+        linear-gradient(
+            135deg,
+            #ec5594,
+            #d9367c
+        );
 
-    border-radius:
-        22px;
+    padding:
+        16px 32px;
 
 }
 
 
-/* =========================
+.next::after {
+
+    content:
+        " →";
+
+}
+
+
+/* =========================================
+   OLD MAN WARNING
+========================================= */
+
+.old {
+
+    color:
+        #c63f78;
+
+    font-weight:
+        bold;
+
+    font-size:
+        22px;
+
+    animation:
+        warning 1s infinite alternate;
+
+}
+
+
+@keyframes warning {
+
+    from {
+
+        opacity:
+            0.65;
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+/* =========================================
    CAKE
-========================= */
+========================================= */
 
 .cake {
 
     font-size:
-        100px;
-
-    margin:
-        15px;
+        110px;
 
     animation:
-        cakeBounce 2s infinite;
+        cakeBounce 1.5s infinite alternate;
 
 }
 
 
 @keyframes cakeBounce {
 
-    0%,100% {
+    from {
+
         transform:
             translateY(0);
+
     }
 
-    50% {
+    to {
+
         transform:
-            translateY(-10px);
+            translateY(-12px);
+
     }
 
 }
 
 
-/* =========================
-   CANDLE
-========================= */
-
 .flame {
+
+    font-size:
+        50px;
 
     display:
         inline-block;
 
-    font-size:
-        45px;
-
     animation:
-        flameDance 0.4s infinite alternate;
+        flameDance
+        0.35s
+        infinite
+        alternate;
 
 }
 
@@ -300,15 +505,19 @@ button:hover {
 @keyframes flameDance {
 
     from {
+
         transform:
-            scale(1)
-            rotate(-5deg);
+            rotate(-7deg)
+            scale(1);
+
     }
 
     to {
+
         transform:
-            scale(1.15)
-            rotate(5deg);
+            rotate(7deg)
+            scale(1.15);
+
     }
 
 }
@@ -320,14 +529,14 @@ button:hover {
         none;
 
     opacity:
-        0.25;
+        0.3;
 
 }
 
 
-/* =========================
-   RATING
-========================= */
+/* =========================================
+   RATINGS
+========================================= */
 
 .rating {
 
@@ -335,114 +544,38 @@ button:hover {
         21px;
 
     margin:
-        13px;
+        12px;
 
 }
 
 
-/* =========================
-   BIG TEXT
-========================= */
+/* =========================================
+   BIG EMOJIS
+========================================= */
 
 .big {
 
     font-size:
-        45px;
+        55px;
 
 }
 
 
-/* =========================
-   FINAL MESSAGE
-========================= */
+/* =========================================
+   RUNNING BUTTON
+========================================= */
 
-.final-message {
-
-    font-size:
-        21px;
-
-    font-weight:
-        bold;
-
-    color:
-        #d94383;
-
-}
-
-
-/* =========================
-   PULSE
-========================= */
-
-.pulse {
-
-    animation:
-        pulse 1s infinite alternate;
-
-}
-
-
-@keyframes pulse {
-
-    from {
-        transform:
-            scale(1);
-    }
-
-    to {
-        transform:
-            scale(1.08);
-    }
-
-}
-
-
-/* =========================
-   CONFETTI
-========================= */
-
-.confetti {
+.running {
 
     position:
-        fixed;
-
-    top:
-        -30px;
-
-    z-index:
-        9999;
-
-    font-size:
-        25px;
-
-    pointer-events:
-        none;
-
-    animation:
-        fall 3s linear forwards;
+        relative;
 
 }
 
 
-@keyframes fall {
-
-    to {
-
-        transform:
-            translateY(110vh)
-            rotate(720deg);
-
-        opacity:
-            0;
-
-    }
-
-}
-
-
-/* =========================
+/* =========================================
    FLOATING HEARTS
-========================= */
+========================================= */
 
 .floating-heart {
 
@@ -450,21 +583,27 @@ button:hover {
         fixed;
 
     bottom:
-        -50px;
+        -60px;
+
+    font-size:
+        28px;
 
     z-index:
-        1;
+        999;
 
     pointer-events:
         none;
 
     animation:
-        floatUp 6s linear forwards;
+        floatHeart
+        6s
+        linear
+        forwards;
 
 }
 
 
-@keyframes floatUp {
+@keyframes floatHeart {
 
     from {
 
@@ -473,7 +612,7 @@ button:hover {
             rotate(0deg);
 
         opacity:
-            0.9;
+            1;
 
     }
 
@@ -491,9 +630,9 @@ button:hover {
 }
 
 
-/* =========================
+/* =========================================
    BALLOONS
-========================= */
+========================================= */
 
 .balloon {
 
@@ -503,22 +642,25 @@ button:hover {
     bottom:
         -100px;
 
-    z-index:
-        1;
-
     font-size:
-        55px;
+        60px;
+
+    z-index:
+        998;
 
     pointer-events:
         none;
 
     animation:
-        balloonUp 8s linear forwards;
+        balloonFloat
+        8s
+        linear
+        forwards;
 
 }
 
 
-@keyframes balloonUp {
+@keyframes balloonFloat {
 
     from {
 
@@ -547,59 +689,107 @@ button:hover {
 }
 
 
-/* =========================
-   OLD MAN WARNING
-========================= */
+/* =========================================
+   CONFETTI
+========================================= */
 
-.old-warning {
+.confetti {
+
+    position:
+        fixed;
+
+    top:
+        -50px;
+
+    z-index:
+        9999;
+
+    pointer-events:
+        none;
+
+    animation:
+        confettiFall
+        4s
+        linear
+        forwards;
+
+}
+
+
+@keyframes confettiFall {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(1);
+
+        opacity:
+            1;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(115vh)
+            rotate(1000deg)
+            scale(0.7);
+
+        opacity:
+            0;
+
+    }
+
+}
+
+
+/* =========================================
+   FINAL MESSAGE
+========================================= */
+
+.final {
 
     font-size:
-        24px;
+        21px;
 
     font-weight:
         bold;
 
     color:
-        #b83c72;
-
-    animation:
-        warningPulse 1s infinite alternate;
+        #d94383;
 
 }
 
 
-@keyframes warningPulse {
-
-    from {
-        opacity:
-            0.65;
-    }
-
-    to {
-        opacity:
-            1;
-    }
-
-}
-
-
-/* =========================
-   RESPONSIVE
-========================= */
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 500px) {
 
     .card {
+
+        min-height:
+            560px;
 
         padding:
             30px 16px;
 
     }
 
-    .section {
+    h2 {
 
-        padding:
-            22px 15px;
+        font-size:
+            25px;
+
+    }
+
+    p {
+
+        font-size:
+            16px;
 
     }
 
@@ -622,574 +812,11 @@ button:hover {
 
 <div class="container">
 
-
 <div class="card">
 
-
-<div class="heart">
-💗
-</div>
-
-
-<h1>
-HAPPY BIRTHDAY, HUSBAND
-</h1>
-
-
-<p class="old-warning">
-
-🚨 EXTREMELY IMPORTANT 🚨
-
-<br>
-
-ANOTHER YEAR HAS BEEN ADDED TO THIS ANCIENT MAN.
-
-</p>
-
-
-<p>
-
-Welcome to the official birthday website
-
-created specifically for my
-
-<strong>very, very, VERY old husband.</strong>
-
-</p>
-
-
-<p>
-
-Before we continue...
-
-<br>
-
-Are you ready to admit that you're getting old?
-
-</p>
-
-
-<button id="yesButton">
-
-YES 😌
-
-</button>
-
-
-<button id="noButton" class="secondary">
-
-NO 🙄
-
-</button>
-
-
-<div id="birthdayContent" class="hidden">
-
-
-<!-- =====================
-     CAKE
-===================== -->
-
-
-<div class="section">
-
-
-<h2>
-
-🎂 YOUR ANNUAL CAKE CEREMONY 🎂
-
-</h2>
-
-
-<div class="cake">
-
-🎂
+<div id="app"></div>
 
 </div>
-
-
-<p>
-
-Please approach the birthday candle.
-
-</p>
-
-
-<div
-id="flame"
-class="flame"
->
-
-🔥
-
-</div>
-
-
-<br>
-
-
-<button
-id="blowButton"
-class="pulse"
->
-
-💨 BLOW OUT THE CANDLE
-
-</button>
-
-
-<p id="candleMessage">
-
-You have one job.
-
-Don't mess this up.
-
-</p>
-
-
-</div>
-
-
-<!-- =====================
-     AGE SECTION
-===================== -->
-
-
-<div class="section">
-
-
-<h2>
-
-👴 AGE ANNOUNCEMENT 👴
-
-</h2>
-
-
-<p>
-
-Your age is no longer measured in years.
-
-</p>
-
-
-<p class="big">
-
-🦖
-
-</p>
-
-
-<h2>
-
-It is measured in HISTORICAL ERAS. :p
-
-</h2>
-
-
-<p>
-
-You are now officially:
-
-</p>
-
-
-<p>
-
-🪨 Older than rocks
-
-<br>
-
-🦕 Older than dinosaurs
-
-<br>
-
-🏺 Older than most civilizations
-
-<br>
-
-📜 Older than the starsss
-
-<br>
-
-👴 Basically an archaeological artifact
-
-</p>
-
-
-<p>
-
-Scientists are currently carbon-dating you.
-
-Please remain still.
-
-
-
-</p>
-
-
-</div>
-
-
-<!-- =====================
-     HUSBAND REVIEW
-===================== -->
-
-
-<div class="section">
-
-
-<h2>
-
-📋 OFFICIAL HUSBAND PERFORMANCE REVIEW
-
-</h2>
-
-
-<div class="rating">
-
- Being handsome: 11/10
-
-</div>
-
-
-<div class="rating">
-
- Making me laugh: 10/10
-
-</div>
-
-
-<div class="rating">
-
- Annoying me: 100/10
-
-</div>
-
-
-<div class="rating">
-
- Replying on time: under investigation
-
-</div>
-
-
-<div class="rating">
-
-Being Autistic and Artistic : 999/10
-
-</div>
-
-
-<div class="rating">
-
-💗 Being my husband: ∞/10
-
-</div>
-
-
-</div>
-
-
-<!-- =====================
-     HUSBAND TEST
-===================== -->
-
-
-<div class="section">
-
-
-<h2>
-
-💍 HUSBAND TEST
-
-</h2>
-
-
-<p>
-
-Do you promise to continue loving your wife forever?
-
-</p>
-
-
-<button id="loveButton">
-
-YES ❤️
-
-</button>
-
-
-<button id="runningButton" class="secondary">
-
-NO
-
-</button>
-
-
-<p id="loveResult"></p>
-
-
-</div>
-
-
-<!-- =====================
-     AWARD
-===================== -->
-
-
-<div class="section">
-
-
-<h2>
-
-🏆 OFFICIAL AWARD
-
-</h2>
-
-
-<p>
-
-After extensive research,
-
-scientific analysis,
-
-and absolutely no outside opinions...
-
-</p>
-
-
-<p class="big">
-
-🏆
-
-</p>
-
-
-<h2>
-
-BEST HUSBAND OF THE YEAR
-
-</h2>
-
-
-<p>
-
-Prize:
-
-<br>
-
-One extremely cute wife.
-
-</p>
-
-
-<p>
-
-Unfortunately,
-
-she is non-refundable.
-
-💅💅💅
-
-</p>
-
-
-</div>
-
-
-<!-- =====================
-     OLD MAN QUIZ
-===================== -->
-
-
-<div class="section">
-
-
-<h2>
-
-🧓 THE ANCIENT HUSBAND QUIZ
-
-</h2>
-
-
-<p>
-
-What do you need most on your birthday?
-
-</p>
-
-
-<button id="coffeeButton">
-
-☕ "Chai"
-</button>
-
-
-<button id="sleepButton">
-
-🛌 A Nap
-
-</button>
-
-
-<button id="backButton">
-
-💊 Back Pain Medicine
-
-</button>
-
-
-<p id="quizResult"></p>
-
-
-</div>
-
-
-<!-- =====================
-     MOVING LOVE
-===================== -->
-
-
-<div class="section">
-
-
-<h2>
-
-💗 IN CASE YOU FORGOT...
-
-</h2>
-
-
-<p>
-
-You may be VERY VERY VERY old...
-
-</p>
-
-
-<p>
-
-But you're still my favorite person.
-
-❤️
-
-</p>
-
-
-<p>
-
-And I wouldn't trade you for a younger model.
-
-</p>
-
-
-<p>
-
-(probably)
-
-
-
-</p>
-
-
-</div>
-
-
-<!-- =====================
-     SERIOUS MESSAGE
-===================== -->
-
-
-<div class="section">
-
-
-<h2>
-
-💌 OKAY, ONE SERIOUS MOMENT
-
-</h2>
-
-
-<p class="final-message">
-
-
-Happy Birthday, my love. ❤️
-
-<br><br>
-
-
-I hope this year brings you everything
-
-you've been wishing for.
-
-
-<br><br>
-
-
-Thank you for being my person,
-
-my partner,
-
-and my favorite human to annoy.
-
-
-<br><br>
-
-
-I love you more than you probably realize.
-
-
-<br><br>
-
-
-(Even though you're ancient)
-
-
-muah nuah muahh
-
-
-</p>
-
-
-</div>
-
-
-<!-- =====================
-     FINAL CONFETTI
-===================== -->
-
-
-<div class="section">
-
-
-<h2>
-
-🎉 READY FOR THE FINAL SURPRISE?
-
-</h2>
-
-
-<button
-id="confettiButton"
-class="pulse"
->
-
-🎉 RELEASE THE CHAOS 🎉
-
-</button>
-
-
-<p id="confettiMessage"></p>
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
 
 </div>
 
@@ -1197,136 +824,596 @@ class="pulse"
 <script>
 
 
-/* =========================
-   BUTTONS
-========================= */
+/* =================================================
+   PAGE SYSTEM
+================================================= */
+
+const app =
+document.getElementById("app");
 
 
-const yesButton =
-document.getElementById("yesButton");
+let currentPage =
+0;
 
 
-const noButton =
-document.getElementById("noButton");
+/* =================================================
+   ALL THE PAGES
+================================================= */
+
+const pages = [
+
+/* PAGE 0 */
+
+`
+<div class="page">
+
+<div class="heart">💗</div>
+
+<h1 class="bigTitle">
+HAPPY BIRTHDAY
+</h1>
+
+<h2>
+MY VERY OLD HUSBAND
+</h2>
+
+<p class="old">
+🚨 WARNING 🚨
+</p>
+
+<p>
+You are about to enter the official
+birthday website of a man who is
+getting VERY VERY VERY old.
+</p>
+
+<button class="next" onclick="nextPage()">
+ENTER AT YOUR OWN RISK
+</button>
+
+</div>
+`,
 
 
-const birthdayContent =
-document.getElementById("birthdayContent");
+/* PAGE 1 */
+
+`
+<div class="page">
+
+<div class="big">
+👴
+</div>
+
+<h2>
+FIRST OF ALL...
+</h2>
+
+<p>
+Congratulations!
+</p>
+
+<p>
+You have successfully survived
+another year on this planet.
+</p>
+
+<button class="next" onclick="nextPage()">
+CONTINUE
+</button>
+
+</div>
+`,
 
 
-const blowButton =
-document.getElementById("blowButton");
+/* PAGE 2 */
+
+`
+<div class="page">
+
+<div class="big">
+🦖
+</div>
+
+<h2>
+WE NEED TO TALK ABOUT YOUR AGE.
+</h2>
+
+<p>
+At this point,
+calling you "old" would actually
+be an understatement.
+</p>
+
+<p class="old">
+YOU ARE VERY VERY VERY OLD.
+</p>
+
+<button class="next" onclick="nextPage()">
+I ACCEPT MY FATE
+</button>
+
+</div>
+`,
 
 
-const flame =
-document.getElementById("flame");
+/* PAGE 3 */
+
+`
+<div class="page">
+
+<div class="big">
+🪨
+</div>
+
+<h2>
+YOUR AGE IS NOW HISTORICAL.
+</h2>
+
+<p>
+You are older than rocks.
+</p>
+
+<p>
+Older than dinosaurs.
+</p>
+
+<p>
+Older than most civilizations.
+</p>
+
+<p>
+Basically an archaeological artifact.
+</p>
+
+<button class="next" onclick="nextPage()">
+THAT'S ENOUGH 😭
+</button>
+
+</div>
+`,
 
 
-const candleMessage =
-document.getElementById("candleMessage");
+/* PAGE 4 */
+
+`
+<div class="page">
+
+<div class="big">
+📋
+</div>
+
+<h2>
+OFFICIAL HUSBAND PERFORMANCE REVIEW
+</h2>
+
+<div class="rating">
+❤️ Being handsome: 11/10
+</div>
+
+<div class="rating">
+😂 Making me laugh: 10/10
+</div>
+
+<div class="rating">
+🙄 Annoying me: 100/10
+</div>
+
+<div class="rating">
+📱 Replying on time: UNDER INVESTIGATION
+</div>
+
+<div class="rating">
+👴 Acting ancient: 999/10
+</div>
+
+<div class="rating">
+💍 Being my husband: ∞/10
+</div>
+
+<button class="next" onclick="nextPage()">
+NEXT
+</button>
+
+</div>
+`,
 
 
-const loveButton =
-document.getElementById("loveButton");
+/* PAGE 5 */
+
+`
+<div class="page">
+
+<h2>
+🎂 THE ANNUAL CAKE CEREMONY 🎂
+</h2>
+
+<div class="cake">
+🎂
+</div>
+
+<p>
+One candle represents another year
+of your ancient existence.
+</p>
+
+<div
+id="flame"
+class="flame"
+>
+🔥
+</div>
+
+<br>
+
+<button
+id="blowButton"
+onclick="blowCandle()"
+>
+💨 BLOW OUT THE CANDLE
+</button>
+
+<p id="candleMessage">
+Go on, old man.
+You still have enough lung power.
+😭
+</p>
+
+</div>
+`,
 
 
-const runningButton =
-document.getElementById("runningButton");
+/* PAGE 6 */
+
+`
+<div class="page">
+
+<div class="big">
+💨
+</div>
+
+<h2>
+YOU DID IT!
+</h2>
+
+<p>
+The candle is officially dead.
+</p>
+
+<p>
+And somehow...
+</p>
+
+<p class="old">
+SO ARE A FEW OF YOUR REMAINING YOUTHFUL YEARS.
+😭
+</p>
+
+<button class="next" onclick="nextPage()">
+CONTINUE
+</button>
+
+</div>
+`,
 
 
-const loveResult =
-document.getElementById("loveResult");
+/* PAGE 7 */
+
+`
+<div class="page">
+
+<div class="big">
+💍
+</div>
+
+<h2>
+HUSBAND TEST
+</h2>
+
+<p>
+Do you promise to continue
+loving your wife forever?
+</p>
+
+<button onclick="loveYes()">
+YES ❤️
+</button>
+
+<button
+id="husbandNo"
+class="secondary running"
+onmouseenter="runAway(this)"
+>
+NO 🙄
+</button>
+
+<p id="loveResult"></p>
+
+</div>
+`,
 
 
-const confettiButton =
-document.getElementById("confettiButton");
+/* PAGE 8 */
+
+`
+<div class="page">
+
+<div class="big">
+🏆
+</div>
+
+<h2>
+OFFICIAL AWARD
+</h2>
+
+<p>
+After extensive scientific research,
+careful investigation,
+and absolutely no outside opinions...
+</p>
+
+<h2>
+YOU HAVE WON:
+</h2>
+
+<h1>
+🏆 BEST HUSBAND 🏆
+</h1>
+
+<p>
+Prize:
+</p>
+
+<p>
+ONE EXTREMELY CUTE WIFE.
+</p>
+
+<p>
+Unfortunately,
+she is completely non-refundable.
+😭
+</p>
+
+<button class="next" onclick="nextPage()">
+ACCEPT YOUR AWARD
+</button>
+
+</div>
+`,
 
 
-const confettiMessage =
-document.getElementById("confettiMessage");
+/* PAGE 9 */
+
+`
+<div class="page">
+
+<div class="big">
+🧓
+</div>
+
+<h2>
+THE ANCIENT HUSBAND QUIZ
+</h2>
+
+<p>
+What do you need most
+at your advanced age?
+</p>
+
+<button onclick="quiz('coffee')">
+☕ COFFEE
+</button>
+
+<button onclick="quiz('nap')">
+🛌 A NAP
+</button>
+
+<button onclick="quiz('back')">
+💊 BACK PAIN MEDICINE
+</button>
+
+<p id="quizResult"></p>
+
+</div>
+`,
 
 
-const coffeeButton =
-document.getElementById("coffeeButton");
+/* PAGE 10 */
+
+`
+<div class="page">
+
+<div class="heart">
+💗
+</div>
+
+<h2>
+OKAY...
+ENOUGH BULLYING.
+</h2>
+
+<p>
+Because despite being
+VERY VERY VERY old...
+</p>
+
+<p>
+you are still my favorite person.
+</p>
+
+<p>
+My favorite human.
+</p>
+
+<p>
+My favorite idiot.
+</p>
+
+<button class="next" onclick="nextPage()">
+ONE LAST THING...
+</button>
+
+</div>
+`,
 
 
-const sleepButton =
-document.getElementById("sleepButton");
+/* PAGE 11 */
+
+`
+<div class="page">
+
+<div class="big">
+💌
+</div>
+
+<h2>
+ONE SERIOUS MOMENT
+</h2>
+
+<p class="final">
+Happy Birthday, my love. ❤️
+</p>
+
+<p class="final">
+I hope this year brings you
+everything you've been wishing for.
+</p>
+
+<p class="final">
+Thank you for being my person,
+my partner,
+and my favorite person
+to annoy.
+</p>
+
+<p class="final">
+I love you more than you probably realize.
+</p>
+
+<p class="final">
+Even though you're ancient.
+😭❤️
+</p>
+
+<button class="next" onclick="nextPage()">
+I'M NOT DONE YET...
+</button>
+
+</div>
+`,
 
 
-const backButton =
-document.getElementById("backButton");
+/* PAGE 12 */
+
+`
+<div class="page">
+
+<div class="big">
+🎉
+</div>
+
+<h2>
+THE FINAL SURPRISE
+</h2>
+
+<p>
+Are you ready?
+</p>
+
+<button
+class="pulse"
+onclick="finalExplosion()"
+>
+🎉 RELEASE THE CHAOS 🎉
+</button>
+
+<p id="finalMessage"></p>
+
+</div>
+`
+
+];
 
 
-const quizResult =
-document.getElementById("quizResult");
+/* =================================================
+   SHOW FIRST PAGE
+================================================= */
+
+showPage(0);
 
 
-/* =========================
-   OPEN WEBSITE
-========================= */
+/* =================================================
+   SHOW PAGE
+================================================= */
+
+function showPage(index) {
+
+    app.innerHTML =
+        pages[index];
+
+}
 
 
-yesButton.addEventListener(
-"click",
-function() {
+/* =================================================
+   NEXT PAGE
+================================================= */
 
-    birthdayContent
-        .classList
-        .remove("hidden");
+function nextPage() {
 
-    yesButton.style.display =
-        "none";
-
-    noButton.style.display =
-        "none";
-
-    createHearts();
-
-    createBalloons();
-
-    window.scrollTo({
-
-        top:
-            document.body.scrollHeight,
-
-        behavior:
-            "smooth"
-
-    });
-
-});
+    const oldPage =
+        document.querySelector(".page");
 
 
-/* =========================
-   RUNNING NO BUTTON
-========================= */
+    if (oldPage) {
+
+        oldPage.classList.add("exit");
+
+    }
 
 
-noButton.addEventListener(
-"mouseenter",
-function() {
+    setTimeout(function() {
 
-    const x =
-        Math.random() * 220 - 110;
-
-    const y =
-        Math.random() * 140 - 70;
-
-    noButton.style.transform =
-        `translate(${x}px, ${y}px)`;
-
-});
+        currentPage++;
 
 
-/* =========================
-   BLOW OUT CANDLE
-========================= */
+        if (
+            currentPage
+            >= pages.length
+        ) {
+
+            currentPage =
+                pages.length - 1;
+
+        }
 
 
-blowButton.addEventListener(
-"click",
-function() {
+        showPage(
+            currentPage
+        );
+
+
+        createSmallCelebration();
+
+
+    }, 400);
+
+}
+
+
+/* =================================================
+   CANDLE
+================================================= */
+
+function blowCandle() {
+
+    const flame =
+        document.getElementById("flame");
+
+    const message =
+        document.getElementById("candleMessage");
+
+
+    if (!flame) return;
+
 
     flame.innerHTML =
         "💨";
@@ -1335,214 +1422,174 @@ function() {
         "out"
     );
 
-    candleMessage.innerHTML =
-        "💨 CANDLE BLOWN OUT! 💨<br><br>" +
-        "Congratulations, ancient one. " +
-        "You survived another year. 😭";
 
-    blowButton.innerHTML =
-        "🎉 CANDLE DEFEATED!";
-
-    blowButton.disabled =
-        true;
-
-    createConfetti();
-
-});
-
-
-/* =========================
-   LOVE BUTTON
-========================= */
-
-
-loveButton.addEventListener(
-"click",
-function() {
-
-    loveResult.innerHTML =
-        "CORRECT ANSWER. 😌❤️" +
+    message.innerHTML =
+        "💨 CANDLE BLOWN OUT! 💨" +
         "<br><br>" +
-        "Your husband privileges have been renewed for another year.";
-
-    createHearts();
-
-});
+        "Well done, ancient one." +
+        "<br>" +
+        "You still have some breath left. 😭";
 
 
-/* =========================
-   RUNNING NO
-========================= */
+    createConfetti(150);
 
 
-runningButton.addEventListener(
-"mouseenter",
-function() {
+    setTimeout(
+        function() {
 
-    const x =
-        Math.random() * 250 - 125;
+            nextPage();
 
-    const y =
-        Math.random() * 150 - 75;
-
-    runningButton.style.transform =
-        `translate(${x}px, ${y}px)`;
-
-});
-
-
-/* =========================
-   OLD MAN QUIZ
-========================= */
-
-
-coffeeButton.addEventListener(
-"click",
-function() {
-
-    quizResult.innerHTML =
-        "☕ CORRECT. " +
-        "You get a reward for a hundred kisses that you may redeem anytime";
-
-});
-
-
-sleepButton.addEventListener(
-"click",
-function() {
-
-    quizResult.innerHTML =
-        "🛌 CORRECT. " +
-        "At your age, naps are basically mandatory.";
-
-});
-
-
-backButton.addEventListener(
-"click",
-function() {
-
-    quizResult.innerHTML =
-        "💊 VERY CORRECT. " +
-        "Please consult your nearest archaeologist.";
-
-});
-
-
-/* =========================
-   CONFETTI
-========================= */
-
-
-confettiButton.addEventListener(
-"click",
-function() {
-
-    createConfetti();
-
-    createHearts();
-
-    createBalloons();
-
-    confettiMessage.innerHTML =
-        "🎉🎉🎉 HAPPY BIRTHDAY, ANCIENT HUSBAND! 🎉🎉🎉";
-
-});
-
-
-function createConfetti() {
-
-    const emojis = [
-
-        "🎉",
-        "💗",
-        "💕",
-        "✨",
-        "🎂",
-        "💖",
-        "🥳",
-        "🎈",
-        "❤️"
-
-    ];
-
-
-    for (
-        let i = 0;
-        i < 70;
-        i++
-    ) {
-
-        const piece =
-            document.createElement("div");
-
-        piece.className =
-            "confetti";
-
-        piece.innerText =
-            emojis[
-                Math.floor(
-                    Math.random()
-                    * emojis.length
-                )
-            ];
-
-        piece.style.left =
-            Math.random()
-            * 100
-            + "vw";
-
-        piece.style.animationDelay =
-            Math.random()
-            * 1.5
-            + "s";
-
-        piece.style.fontSize =
-            (
-                15
-                +
-                Math.random()
-                * 25
-            )
-            + "px";
-
-
-        document.body
-            .appendChild(piece);
-
-
-        setTimeout(
-            function() {
-
-                piece.remove();
-
-            },
-            4500
-        );
-
-    }
+        },
+        2500
+    );
 
 }
 
 
-/* =========================
-   FLOATING HEARTS
-========================= */
+/* =================================================
+   HUSBAND YES
+================================================= */
 
+function loveYes() {
+
+    const result =
+        document.getElementById(
+            "loveResult"
+        );
+
+
+    result.innerHTML =
+        "CORRECT ANSWER. 😌❤️" +
+        "<br><br>" +
+        "Your husband privileges have been renewed." +
+        "<br><br>" +
+        "You may continue to the next stage.";
+
+
+    createHearts();
+
+
+    setTimeout(
+        function() {
+
+            nextPage();
+
+        },
+        2200
+    );
+
+}
+
+
+/* =================================================
+   RUNNING BUTTON
+================================================= */
+
+function runAway(button) {
+
+    const x =
+        Math.random()
+        * 260
+        - 130;
+
+    const y =
+        Math.random()
+        * 180
+        - 90;
+
+
+    button.style.transform =
+        `translate(${x}px, ${y}px)`;
+
+}
+
+
+/* =================================================
+   QUIZ
+================================================= */
+
+function quiz(answer) {
+
+    const result =
+        document.getElementById(
+            "quizResult"
+        );
+
+
+    if (answer === "coffee") {
+
+        result.innerHTML =
+            "☕ CORRECT." +
+            "<br>" +
+            "Ancient husbands require coffee.";
+
+    }
+
+
+    if (answer === "nap") {
+
+        result.innerHTML =
+            "🛌 ALSO CORRECT." +
+            "<br>" +
+            "At your age, naps are basically mandatory.";
+
+    }
+
+
+    if (answer === "back") {
+
+        result.innerHTML =
+            "💊 EXTREMELY CORRECT." +
+            "<br>" +
+            "Please consult your nearest archaeologist.";
+
+    }
+
+
+    setTimeout(
+        function() {
+
+            nextPage();
+
+        },
+        2200
+    );
+
+}
+
+
+/* =================================================
+   SMALL CELEBRATION BETWEEN PAGES
+================================================= */
+
+function createSmallCelebration() {
+
+    createHearts();
+
+}
+
+
+/* =================================================
+   HEARTS
+================================================= */
 
 function createHearts() {
 
     for (
         let i = 0;
-        i < 15;
+        i < 8;
         i++
     ) {
 
         const heart =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
+
 
         heart.className =
             "floating-heart";
+
 
         heart.innerText =
             [
@@ -1556,15 +1603,18 @@ function createHearts() {
                 )
             ];
 
+
         heart.style.left =
             Math.random()
             * 100
             + "vw";
 
+
         heart.style.animationDelay =
             Math.random()
-            * 2
+            * 1.5
             + "s";
+
 
         document.body
             .appendChild(heart);
@@ -1584,24 +1634,27 @@ function createHearts() {
 }
 
 
-/* =========================
-   FLOATING BALLOONS
-========================= */
-
+/* =================================================
+   BALLOONS
+================================================= */
 
 function createBalloons() {
 
     for (
         let i = 0;
-        i < 8;
+        i < 15;
         i++
     ) {
 
         const balloon =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
+
 
         balloon.className =
             "balloon";
+
 
         balloon.innerText =
             [
@@ -1615,15 +1668,18 @@ function createBalloons() {
                 )
             ];
 
+
         balloon.style.left =
             Math.random()
             * 100
             + "vw";
 
+
         balloon.style.animationDelay =
             Math.random()
-            * 3
+            * 4
             + "s";
+
 
         document.body
             .appendChild(balloon);
@@ -1635,12 +1691,221 @@ function createBalloons() {
                 balloon.remove();
 
             },
-            10000
+            12000
         );
 
     }
 
 }
+
+
+/* =================================================
+   MASSIVE FINAL CONFETTI
+================================================= */
+
+function createConfetti(amount = 100) {
+
+    const emojis = [
+
+        "🎉",
+        "💗",
+        "💕",
+        "✨",
+        "🎂",
+        "💖",
+        "🥳",
+        "🎈",
+        "❤️",
+        "🌸",
+        "⭐",
+        "💐"
+
+    ];
+
+
+    for (
+        let i = 0;
+        i < amount;
+        i++
+    ) {
+
+        const piece =
+            document.createElement(
+                "div"
+            );
+
+
+        piece.className =
+            "confetti";
+
+
+        piece.innerText =
+            emojis[
+                Math.floor(
+                    Math.random()
+                    * emojis.length
+                )
+            ];
+
+
+        piece.style.left =
+            Math.random()
+            * 100
+            + "vw";
+
+
+        piece.style.animationDelay =
+            Math.random()
+            * 2
+            + "s";
+
+
+        piece.style.fontSize =
+            (
+                18
+                +
+                Math.random()
+                * 32
+            )
+            + "px";
+
+
+        piece.style.animationDuration =
+            (
+                3
+                +
+                Math.random()
+                * 3
+            )
+            + "s";
+
+
+        document.body
+            .appendChild(piece);
+
+
+        setTimeout(
+            function() {
+
+                piece.remove();
+
+            },
+            7000
+        );
+
+    }
+
+}
+
+
+/* =================================================
+   FINAL EXPLOSION
+================================================= */
+
+function finalExplosion() {
+
+    const message =
+        document.getElementById(
+            "finalMessage"
+        );
+
+
+    message.innerHTML =
+        "🎉🎉🎉🎉🎉" +
+        "<br><br>" +
+        "HAPPY BIRTHDAY, MY ANCIENT HUSBAND! ❤️" +
+        "<br><br>" +
+        "I LOVE YOU SO MUCH. 💗" +
+        "<br><br>" +
+        "NOW GO ENJOY BEING OLD. 👴";
+
+
+    /*
+       MASSIVE CONFETTI
+    */
+
+    createConfetti(500);
+
+
+    /*
+       LOTS OF HEARTS
+    */
+
+    for (
+        let i = 0;
+        i < 5;
+        i++
+    ) {
+
+        setTimeout(
+            function() {
+
+                createHearts();
+
+            },
+            i * 400
+        );
+
+    }
+
+
+    /*
+       LOTS OF BALLOONS
+    */
+
+    for (
+        let i = 0;
+        i < 4;
+        i++
+    ) {
+
+        setTimeout(
+            function() {
+
+                createBalloons();
+
+            },
+            i * 500
+        );
+
+    }
+
+
+    /*
+       MORE CONFETTI WAVES
+    */
+
+    setTimeout(
+        function() {
+
+            createConfetti(300);
+
+        },
+        1500
+    );
+
+
+    setTimeout(
+        function() {
+
+            createConfetti(300);
+
+        },
+        3000
+    );
+
+
+    setTimeout(
+        function() {
+
+            createConfetti(300);
+
+        },
+        5000
+    );
+
+}
+
 
 </script>
 
