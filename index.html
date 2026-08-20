@@ -1,0 +1,471 @@
+# Interactive Pink Boyfriend Birthday Website
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday ❤️</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #ffd6e7, #fff0f6, #ffc2dc);
+    color: #5c2441;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.9);
+    border: 3px solid #ff9fc5;
+    border-radius: 30px;
+    padding: 40px 25px;
+    box-shadow: 0 15px 40px rgba(170,60,110,0.18);
+}
+
+.heart {
+    font-size: 55px;
+    animation: heartbeat 1.2s infinite alternate;
+}
+
+@keyframes heartbeat {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.18);
+    }
+}
+
+h1 {
+    font-size: clamp(35px, 8vw, 65px);
+    color: #e94f91;
+    margin: 15px 0;
+}
+
+h2 {
+    color: #df4d89;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+button {
+    border: none;
+    border-radius: 50px;
+    padding: 15px 25px;
+    margin: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    background: #ed5795;
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.07);
+}
+
+.secondary {
+    background: #ffd0e2;
+    color: #8c315b;
+}
+
+.hidden {
+    display: none;
+}
+
+.section {
+    margin-top: 25px;
+    padding: 25px;
+    background: #fff0f6;
+    border-radius: 20px;
+}
+
+.rating {
+    font-size: 22px;
+    margin: 12px;
+}
+
+.big {
+    font-size: 40px;
+}
+
+.final-message {
+    font-size: 21px;
+    font-weight: bold;
+    color: #d94383;
+}
+
+#runningButton {
+    position: relative;
+}
+
+.confetti {
+    position: fixed;
+    top: -30px;
+    z-index: 9999;
+    font-size: 25px;
+    pointer-events: none;
+    animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.pulse {
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.08);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<div class="heart">💗</div>
+
+<h1>HAPPY BIRTHDAY, LOSER</h1>
+
+<p>
+Welcome to the official website dedicated to celebrating
+the fact that you have somehow survived another year.
+</p>
+
+<p><b>Before we continue...</b></p>
+
+<p>
+Are you actually ready to celebrate your birthday?
+</p>
+
+<button id="yesButton">
+YES 😌
+</button>
+
+<button id="noButton" class="secondary">
+NO 🙄
+</button>
+
+
+<div id="birthdayContent" class="hidden">
+
+<hr>
+
+<div class="section">
+
+<div class="big">🎂</div>
+
+<h2>CONGRATULATIONS!</h2>
+
+<p>
+You are officially another year older.
+</p>
+
+<p>
+Unfortunately, you are still stuck with me. ❤️
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h2>📋 BOYFRIEND PERFORMANCE REVIEW</h2>
+
+<div class="rating">
+❤️ Being cute: 11/10
+</div>
+
+<div class="rating">
+😂 Making me laugh: 10/10
+</div>
+
+<div class="rating">
+🙄 Annoying me: 100/10
+</div>
+
+<div class="rating">
+📱 Replying on time: pending investigation
+</div>
+
+<div class="rating">
+💗 Being my boyfriend: 1000/10
+</div>
+
+</div>
+
+
+<div class="section">
+
+<h2>🚨 IMPORTANT QUESTION 🚨</h2>
+
+<p>
+Do you promise to continue loving your girlfriend?
+</p>
+
+<button id="loveButton">
+YES ❤️
+</button>
+
+<button id="runningButton" class="secondary">
+NO
+</button>
+
+<p id="loveResult"></p>
+
+</div>
+
+
+<div class="section">
+
+<h2>🏆 OFFICIAL AWARD</h2>
+
+<p>
+After extensive research, scientific analysis,
+and absolutely no outside opinions...
+</p>
+
+<h2>YOU HAVE WON:</h2>
+
+<p class="big">
+🏆
+</p>
+
+<h2>BEST BOYFRIEND OF THE YEAR</h2>
+
+<p>
+Prize: one extremely cute girlfriend.
+<br>
+Unfortunately, she is non-refundable.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h2>💌 ONE SERIOUS MOMENT</h2>
+
+<p class="final-message">
+
+Happy Birthday, my love. ❤️
+
+<br><br>
+
+I hope this year brings you everything you've been wishing for.
+Thank you for being someone who makes my life happier,
+funnier, and a whole lot more interesting.
+
+<br><br>
+
+I love you more than you probably realize.
+
+<br><br>
+
+Now stop reading this and go enjoy your birthday. 😭❤️
+
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h2>🎉 READY?</h2>
+
+<button id="confettiButton" class="pulse">
+RELEASE THE CONFETTI 🎉
+</button>
+
+<p id="confettiMessage"></p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+const yesButton = document.getElementById("yesButton");
+const noButton = document.getElementById("noButton");
+
+const birthdayContent =
+document.getElementById("birthdayContent");
+
+const runningButton =
+document.getElementById("runningButton");
+
+const loveButton =
+document.getElementById("loveButton");
+
+const loveResult =
+document.getElementById("loveResult");
+
+const confettiButton =
+document.getElementById("confettiButton");
+
+const confettiMessage =
+document.getElementById("confettiMessage");
+
+
+/* FIRST BUTTON */
+
+yesButton.addEventListener("click", function() {
+
+    birthdayContent.classList.remove("hidden");
+
+    yesButton.style.display = "none";
+    noButton.style.display = "none";
+
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth"
+    });
+
+});
+
+
+/* THE NO BUTTON RUNS AWAY */
+
+noButton.addEventListener("mouseenter", function() {
+
+    const x =
+        Math.random() * 200 - 100;
+
+    const y =
+        Math.random() * 100 - 50;
+
+    noButton.style.transform =
+        `translate(${x}px, ${y}px)`;
+
+});
+
+
+/* LOVE BUTTON */
+
+loveButton.addEventListener("click", function() {
+
+    loveResult.innerHTML =
+        "CORRECT ANSWER. 😌❤️<br><br>You may continue being my boyfriend.";
+
+    createConfetti();
+
+});
+
+
+/* SECOND NO BUTTON */
+
+runningButton.addEventListener("mouseenter", function() {
+
+    const x =
+        Math.random() * 250 - 125;
+
+    const y =
+        Math.random() * 150 - 75;
+
+    runningButton.style.transform =
+        `translate(${x}px, ${y}px)`;
+
+});
+
+
+/* CONFETTI */
+
+confettiButton.addEventListener("click", function() {
+
+    createConfetti();
+
+    confettiMessage.innerHTML =
+        "🎉 HAPPY BIRTHDAY!!! 🎉";
+
+});
+
+
+function createConfetti() {
+
+    const emojis = [
+        "🎉",
+        "💗",
+        "💕",
+        "✨",
+        "🎂",
+        "💖",
+        "🥳"
+    ];
+
+    for (let i = 0; i < 70; i++) {
+
+        const piece =
+            document.createElement("div");
+
+        piece.className = "confetti";
+
+        piece.innerText =
+            emojis[Math.floor(
+                Math.random() * emojis.length
+            )];
+
+        piece.style.left =
+            Math.random() * 100 + "vw";
+
+        piece.style.animationDelay =
+            Math.random() * 1.5 + "s";
+
+        piece.style.fontSize =
+            (15 + Math.random() * 20) + "px";
+
+        document.body.appendChild(piece);
+
+        setTimeout(function() {
+            piece.remove();
+        }, 4500);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
+```
